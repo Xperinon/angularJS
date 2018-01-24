@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html ng-app="AppDemo">
+
+<head>
+    <link href="../CSS/animation.css" rel="styleSheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="../JS/todo.js" type="text/javascript"></script>
+    <!--  <script type="text/javascript" src="protactor.js"></script>-->
+
+</head>
+
+<body id="main">
+    <div ng-controller="TestCtrl as test">
+        <!--  <input type="hidden" ng-if="test.name == Angelo" />
+        <h2 style="text-align: center;">WELCOME HOME {user.name}}</h2> -->
+
+        <div>
+            <form action="#" method="post">
+                <div>
+                    <p>You want to try to play at a game ? Just fill the form and click on Compare and you'll see if you find the right person
+                        <img src="../IMAGES/smiley-clin_oeil.png" alt="clin d'oeil" title="clin d'oeil" width="50" height="40" /></p>
+                    <h3><strong><em>USER TO DISCOVER</em></strong></h3>
+
+                    <label><strong><em>Firstname of the mysterious celebrity :</em></strong></label>
+                    <input type="text" ng-model="user1.firstname" placeholder="Enter a name here"><br />
+                    <label><strong><em>Lastname of the mysterious celebrity :</em></strong></label>
+                    <input type="text" ng-model="user1.lastname" placeholder="Enter a name here"><br />
+                    <label><strong><em>Age of the mysterious celebrity  : </em></strong></label>
+                    <input type="number" ng-model="user1.age" placeholder="Enter a number here">
+
+                    <!-- <h3>User 2</h3>
+                    <label>Name of user 2 :</label>
+                    <input type="text" ng-model="user2.name" placeholder="Enter a name here">
+                    <label>Age of user 2 : </label>
+                    <input type="number" ng-model="user2.age" placeholder="Enter a number here">
+                    <hr> -->
+
+                    <h1 ng-if="test.result == true" id="compareTrue"> CONGRATS <img src="../IMAGES/emoticone-heureux.png" alt="emoticone heureux" width="40" height="40" /> !!! You found the right score !!</h1>
+                    <h1 ng-if="test.result == false" id="compareFalse">SORRY ... <img src="../IMAGES/smiley-triste.png" alt="smiley triste" width="40" height="40" /> you haven 't find the right celebrity ! TRY AGAIN !
+                        <img id="big_smile" class="rotating" src="../IMAGES/smiley-gros-sourire.png" alt="gros sourire" title="gros sourire" width="80" height="60" /></h1>
+
+                </div>
+                <div>
+                    <br/>
+                    <input type="button" ng-click="test.compareUsers(user1); " value="Compare">
+                    <input type="button" ng-click="test.clearQuiz(this);" value="Clear" />
+                    <!--  User 1 : <pre>{{user1 | json}}</pre> -->
+                    <!-- user 2 : <pre>{{user2 | json}}</pre>  -->
+                    Equal : <strong>{{test.result}}</strong>
+                </div>
+            </form>
+            <div ng-if="test.result == true">
+                <img src="../IMAGES/brad_pitt.jpg" alt="brad pitt" title="Brad Pitt" width="876" height="493" />
+            </div>
+        </div>
+
+        <!-- Affiche une liste d'users : A voir -->
+        <div>
+            <div>
+
+                <h3> Second Game ==> List of Users : </h3>
+                I have {{test.users.length}} users. They are:
+                <input type="search" ng-model="q" placeholder="filter users..." aria-label="filter users" />
+                <ul class="example-animate-container">
+                    <li class="animate-repeat" ng-repeat="user in test.users | filter : q as results">
+                        {{user.name}} who is a {{user.gender}}.
+                    </li>
+                    <li class="animate-repeat" ng-if="results.length === 0">
+                        <strong>No results found ... </strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- A voir -->
+        <!-- <div>
+        <input type="number" id="number" />
+        <input type="button" value="Check" ng-click="getResults(12 , 12)" />
+    </div> -->
+        <div>
+            <div>
+                <input type="checkbox" ng-model="confirmed" ng-change="test.checkBoxValue()" id="ng-change-example1" />
+                <input type="checkbox" ng-model="confirmed" id="ng-change-example2" />
+                <label for="ng-change-example2">Confirmed</label><br />
+                <tt>debug = {{test.confirmed}}</tt><br/>
+                <tt>counter = {{test.counter}}</tt><br/>
+            </div>
+        </div>
+        <!--  <script>
+        angular.bootstrap(document, ["AppDemo"]);
+    </script> -->
+    </div>
+</body>
+
+</html>

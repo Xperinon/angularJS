@@ -1,0 +1,19 @@
+{
+    "name": "angularjs",
+    "version": "1.0.0",
+    "description": "project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Xperinon/angularJS.git"
+    },
+    "author": "Angelo ATANASIO",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Xperinon/angularJS/issues"
+    },
+    "homepage": "https://github.com/Xperinon/angularJS#readme"
+}

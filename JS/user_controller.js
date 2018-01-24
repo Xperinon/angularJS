@@ -13,6 +13,7 @@ angular.module('AngularJSApp').controller('userController', ['$scope', 'UserServ
 
     fetchAllUsers();
 
+    
     function fetchAllUsers() {
         UserService.fetchAllUsers().then(function(d) {
             self.users = d;

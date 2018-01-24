@@ -23,7 +23,6 @@ TestCtrl.prototype.compareUsers = function(user1) {
         }
     });
 
-
 };
 TestCtrl.prototype.getUserName = function() {
     var name = "Angelo";

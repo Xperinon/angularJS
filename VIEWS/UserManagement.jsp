@@ -27,6 +27,7 @@
                     background-color: red;
                 }
                 
+                
                 .email.ng-dirty.ng-invalid-email {
                     background-color: yellow;
                 }

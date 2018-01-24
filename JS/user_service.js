@@ -12,7 +12,6 @@ angular.module("AngularJSApp").factory('UserService', ['$http'], '$q', function(
 
     return factory;
 
-
     // function for get all the users
     function fetchAllUsers() {
         var deferred = $q.defer();
